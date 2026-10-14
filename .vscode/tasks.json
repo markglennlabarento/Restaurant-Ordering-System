@@ -1,0 +1,45 @@
+﻿{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Restaurant Ordering System",
+      "type": "shell",
+      "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "-I${workspaceFolder}",
+        "${workspaceFolder}\\src\\main.cpp",
+        "${workspaceFolder}\\src\\Food.cpp",
+        "${workspaceFolder}\\src\\Menu.cpp",
+        "${workspaceFolder}\\src\\Order.cpp",
+        "${workspaceFolder}\\src\\Payment.cpp",
+        "${workspaceFolder}\\src\\Restaurant.cpp",
+        "${workspaceFolder}\\src\\Customer.cpp",
+        "-o",
+        "${workspaceFolder}\\restaurant_app.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Build the full restaurant ordering system project with debug symbols."
+    },
+    {
+      "label": "Run Restaurant Ordering System",
+      "type": "shell",
+      "command": "${workspaceFolder}\\restaurant_app.exe",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": "Build Restaurant Ordering System",
+      "problemMatcher": []
+    }
+  ]
+}
